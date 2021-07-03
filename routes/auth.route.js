@@ -14,7 +14,7 @@ router.post('/register', asyncHandler(insert));
 async function insert(req, res, next) {
     const user = req.body
     console.log('Register user', user);
-    const saveUser = userController.insert(user);
+    const saveUser = await userController.insert(user);
     res.json(saveUser);
 }
 
