@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // Basic nodejs api for general use
 const util = require('util');
 //For debugging purpose
-const debut = require('debug')('express-mongoose-es6-rest-api:index');
+const debug = require('debug')('express-mongoose-es6-rest-api:index');
 const config = require('../config/config');
 const mongoUri = config.mongo.uri;
 
