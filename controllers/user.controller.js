@@ -8,7 +8,6 @@ async function insert(user) {
     
     //to delete any property.
     delete user.password;
-
     console.log(`Save user data in db`, user);
     const submitted =  await new User(user).save();
     return submitted;
@@ -31,4 +30,7 @@ function isUserValid( user, password, hashedPassword) {
 }
 
 
-module.exports = { insert, getUserByEmail }
+module.exports = { 
+    insert, 
+    getUserByEmail 
+}

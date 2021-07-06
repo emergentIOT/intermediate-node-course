@@ -9,10 +9,9 @@ const User = require('../models/User');
 //Inbuilt middleware
 const router = express.Router();
 
-//api/auth/register
+//api/auth/register,login,
 router.post('/register', asyncHandler(insert));
 router.get('/login', asyncHandler(getUser));
-
 
 async function insert(req, res, next) {
     
@@ -24,11 +23,10 @@ async function insert(req, res, next) {
 
 async function getUser(req, res, next) {
 
-    const {email, password} = req.body;
+    const { email, password } = req.body;
     console.log(`Searching user for ${email}`);
     const savedUser = await userController.getUserByEmail(email, password);
     res.json(savedUser);
 }
-
 
 module.exports = router;
